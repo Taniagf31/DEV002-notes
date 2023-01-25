@@ -42,7 +42,7 @@
 
 .LoginBox_line{
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
     width: 36px ;
 
 }
