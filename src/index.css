@@ -1,16 +1,15 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: #FCDCEF;
-}
-
 /* :root{
     --font-Marvel: font-family: 'Marvel', sans-serif;
     --font-Pacifico: font-family: 'Pacifico', cursive;
     --pink-light-color: background-color: #FCDCEF;
 } */
+
+/* * {
+
+    margin: 1px;
+    padding: 1px;
+    border: 0; */
+/* } */
 
 header {
     position: absolute;
@@ -22,6 +21,10 @@ header {
 }
 
 body {
+
+    position: relative;
+    width: 1024px;
+    height: 1366px;
     font-family: 'Marvel', sans-serif;
-    /* font-family: 'Pacifico', cursive; */
+    background-color: #FCDCEF;
 }
