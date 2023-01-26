@@ -1,7 +1,36 @@
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import './index.css';
+import JournalNoteApp from "./JournalNoteApp";
 
-const app = <h1>Desarrollo Útil</h1>;
-const container = document.getElementById("root");
+const root = ReactDOM.createRoot (document.getElementById("root"));
+// root.render(<h1>♥ Journal Note ♥</h1>);
+root.render(
+<JournalNoteApp></JournalNoteApp>
+);
 
-ReactDOM.render(app, container);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const JournalNoteApp = (
+//     <div>
+//     <h1>Journal Note</h1>
+//     <LoginBox 
+//     title = "Login"
+//     username = ""
+//     password= ""
+//     login = "Login"
+//     ></LoginBox>
+//     </div>);
+    
