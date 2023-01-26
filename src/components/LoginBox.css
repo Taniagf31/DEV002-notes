@@ -42,9 +42,17 @@
 
 .LoginBox_line{
     display: flex;
-    justify-content: space-between;
-    width: 36px ;
-
+    justify-content: center;
+    height: 25px;
+    width: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
 }
 
-
+.LoginBox-input {
+    display: flex;
+    height: 25px;
+    width: 30px;
+}
