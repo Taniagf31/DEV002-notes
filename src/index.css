@@ -4,12 +4,13 @@
     --pink-light-color: background-color: #FCDCEF;
 } */
 
-/* * {
+@media (min-width:768px){
+* {
 
-    margin: 1px;
-    padding: 1px;
-    border: 0; */
-/* } */
+    margin: 0;
+   
+
+}
 
 header {
     position: absolute;
@@ -27,4 +28,10 @@ body {
     height: 1366px;
     font-family: 'Marvel', sans-serif;
     background-color: #FCDCEF;
+}
+}
+@media (min-width:1024px){
+
+
+
 }
