@@ -35,17 +35,18 @@
 }
 .LoginBox_info {
 
-    width: 30 px  ;
+    width: 25 px  ;
    
 
 }
 
 .LoginBox_line{
     display: flex;
-    justify-content: space-between;
-    width: 36px ;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 32px ;
 
     
-    
+ }
 
 
