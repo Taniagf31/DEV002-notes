@@ -16,7 +16,7 @@ function LoginBox(){
             
             </div>
             </div>
-            <button>💗Login💗</button>
+            <button className= "LoginBox_button">Login</button>
         </div>
     )
 };

@@ -13,7 +13,7 @@
     gap: 30px 30px;
     justify-content: center;
     align-items: center;
-      
+
 }
 
 .LoginBox_container {
@@ -33,20 +33,35 @@
     color: #CA2588;
     block-size: border-box;
 }
+
 .LoginBox_info {
 
-    width: 25 px  ;
-   
+    width: 25 px;
+
 
 }
 
-.LoginBox_line{
+.LoginBox_line {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 32px ;
-
-    
- }
+    width: 32px;
 
 
+}
+
+.LoginBox_button {
+
+    border-radius: 100px;
+    background: #FABDE2;
+    box-shadow: 6px 4px 4px #F692CF;
+    border: 0;
+    width: 146px;
+    height: 64px;
+    font-family: 'Marvel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #CA2588;
+
+}
