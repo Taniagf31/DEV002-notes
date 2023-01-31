@@ -1,10 +1,10 @@
-import { useContext } from 'react';
-import {context} from '../context/authContext'
+import {useAuth} from '../context/authContext'
 
 export function Home (){
 
-const authContext = useContext(context)
+const authContext = useAuth()
 
+console.log(authContext);
 
     return <h1>💗Home💗</h1>;
 }
