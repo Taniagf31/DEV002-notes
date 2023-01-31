@@ -1,3 +1,3 @@
-export function Register () {
-    return <div>Register</div>
+export function Register (){
+    return <h1>💖Register💖</h1>;
 }
