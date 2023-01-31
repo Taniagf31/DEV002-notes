@@ -1,25 +1,15 @@
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import JournalNoteApp from './JournalNoteApp';
-import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import  App  from './App';
+import './styles.css';
 
-// ReactDOM.render (
-//     <React.StrictMode>
-//         <BrowserRouter>
-//             <JournalNoteApp />
-//         </BrowserRouter>
-//     </React.StrictMode>,
-//     document.getElementById("root")
-// );
-
-const root = ReactDOM.createRoot(document.getElementById('root'))
-// root.render(<h1>♥ Journal Note ♥</h1>);
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <BrowserRouter>
-            <JournalNoteApp />
+        <App/>
         </BrowserRouter>
     </React.StrictMode>
+);
 
-)
+
