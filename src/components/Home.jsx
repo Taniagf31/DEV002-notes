@@ -1,12 +1,18 @@
-import {useAuth} from '../context/authContext'
+import { useAuth } from "../context/authContext";
 
-export function Home (){
+export function Home() {
 
-const authContext = useAuth()
+    const { user, logout, loading } = useAuth()
+    
+    const handledLogout = async () => {
+        await logout();
+    };
+    if (loading) return <h2>Loading</h2>
+    return <div>
+        <h1>💗Welcome {user.email}💗</h1>
 
-console.log(authContext);
-
-    return <h1>💗Home💗</h1>;
+        <button onClick={handledLogout}>Logout</button>
+    </div>
 }
 
 
