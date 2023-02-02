@@ -34,7 +34,7 @@ export function Register() {
 
     return (
         <div>
-            {error && <p> {error}</p>}
+            {error && < Alert message={error} />}
 
 
             <form onSubmit={handleSubmit}>
