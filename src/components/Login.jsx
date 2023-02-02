@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useAuth } from '../context/authContext'
-import { useNavigate, useResolvedPath } from 'react-router-dom';
-import { async } from '@firebase/util';
+import { useNavigate } from 'react-router-dom';
+import { Alert } from './Alert';
 import "./css-components/Login.css";
+
 
 export function Login() {
 
@@ -10,7 +11,7 @@ export function Login() {
         email: '',
         password: '',
     });
-    const { login } = useAuth()
+    const { login, loginWithGoogle } = useAuth()
     const navigate = useNavigate()
     const [error, setError] = useState();
 
@@ -24,52 +25,71 @@ export function Login() {
         try {
 
             await login(user.email, user.password)
-            navigate("/")
+            navigate("/");
         } catch (error) {
             console.log(error.code);
             setError(error.message);
         }
     }
 
+    const handleGoogleSignIn = async () => {
+        try {
+            throw new Error('googleError')
+            await loginWithGoogle()
+            navigate("/");
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
     return (
-        <div className="login-box">
-            {error && <p> {error}</p>}
+        <div>
+            <div className="login-box">
+                {error && < Alert message={error} />}
 
 
-            <form onSubmit={handleSubmit}
-                className="container-contact"
-            >
-                <div className="container-info">
-                    <div>
-                    <label htmlFor="email">
-                    </label>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        onChange={handleChange}
-                        placeholder="Email"
-                        className="inputs"
-                    />               
-                    <label
-                        htmlFor="password" >
-                    </label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        onChange={handleChange}
-                        className="inputs"
-                        placeholder="Password"
-                    />
+                <form onSubmit={handleSubmit}
+                    className="container-contact"
+                >
+                    <div className="container-info">
+                        <div>
+                            <label htmlFor="email">
+                            </label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                onChange={handleChange}
+                                placeholder="Email"
+                                className="inputs"
+                            />
+                            <label
+                                htmlFor="password" >
+                            </label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                onChange={handleChange}
+                                className="inputs"
+                                placeholder="Password"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="btn-container">
-                <button className="btn-login">
-                Login
-                </button>
-                </div>
-            </form>
-        </div>
+                    <div className="btn-container">
+                        <button className="btn-login">
+                            Login
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+            <div>
+                <button onClick={handleGoogleSignIn}>Access</button>
+                <p>You don't have an account yet?     Create Account</p>
+
+
+            </div> </div>
     )
+
 }
