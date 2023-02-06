@@ -10,14 +10,19 @@ export function TaskForm({ createNote }) {
          title,
          description
        });
+       setTitle("")
+       setDescription("")
     };
     return (
 
         <form onSubmit={handleSubmit}>
             <input placeholder="write your title note"
-                onChange={(e) => setTitle(e.target.value)} />
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+                autoFocus />
                 <textarea placeholder="write your note" 
-                onChange={(e) => setDescription(e.target.value)}></textarea>
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}></textarea>
             <button>
                 Save
             </button>

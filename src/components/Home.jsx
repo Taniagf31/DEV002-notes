@@ -19,6 +19,9 @@ export function Home() {
     } ])
    }
    
+   function deleteNote (taskId) {
+    setTasks (tasks.filter (task => task.id !== taskId))
+   }
 
     const handledLogout = async () => {
         try {
@@ -33,7 +36,7 @@ export function Home() {
         
         <button onClick={handledLogout}>Logout</button>
            <TaskForm createNote = {createNote} />
-            <TaskList tasks = {tasks} />
+            <TaskList tasks = {tasks} deleteNote={deleteNote} />
     </div>  
 }
 

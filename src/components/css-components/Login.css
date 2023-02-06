@@ -1,3 +1,10 @@
+/* .login-body {
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:flex-end;
+} */
+
 .login-box {
 
     position: absolute;
@@ -65,4 +72,12 @@
     color: #CA2588;
     
 }
+
+/* .login-googleAccess {
+    position: absolute;
+    width: 502px;
+    height: 340px;
+    left: 400px;
+    top: 300px;
+} */
 
