@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import { useNavigate, useResolvedPath } from 'react-router-dom';
 import { async } from '@firebase/util';
+import { Alert } from './Alert';
 
 
 export function Register() {
