@@ -42,7 +42,7 @@ export function Login() {
     };
 
     return (
-        <div>
+        <div className='login-body'>
             <div className="login-box">
                 {error && < Alert message={error} />}
 
@@ -83,7 +83,7 @@ export function Login() {
                 </form>
 
             </div>
-            <div>
+            <div className='login-googleAccess'>
                 <button onClick={handleGoogleSignIn}>Access</button>
                 <p>You don't have an account yet?     Create Account</p>
 

@@ -1,9 +1,28 @@
 import { useAuth } from "../context/authContext";
+import {TaskList} from './TaskList';
+import {TaskForm} from './TaskForm';
+import {tasks as data} from './tasks';
+import {useState, useEffect} from 'react';
 
 export function Home() {
     const { user, logout, loading } = useAuth()
-    
-    console.log(user);
+    const [tasks, setTasks] = useState([])
+    useEffect(() => {
+        setTasks(data)
+    }, []
+    )
+   function createNote(task) {
+    setTasks([...tasks, {
+     title: task.title, 
+     id: tasks.length,
+     description: task.description  
+    } ])
+   }
+   
+   function deleteNote (taskId) {
+    setTasks (tasks.filter (task => task.id !== taskId))
+   }
+
     const handledLogout = async () => {
         try {
         await logout();
@@ -13,10 +32,12 @@ export function Home() {
     };
     if (loading) return <h2>Loading</h2>
     return <div>
-        <h1>💗Welcome, {user.displayName||user.email}💗</h1>
-
+        <h1>💗Welcome to Journal Note, {user.displayName||user.email}💗</h1>
+        
         <button onClick={handledLogout}>Logout</button>
-    </div>
+           <TaskForm createNote = {createNote} />
+            <TaskList tasks = {tasks} deleteNote={deleteNote} />
+    </div>  
 }
 
 
