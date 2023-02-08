@@ -1,13 +1,14 @@
-/* .login-body {
+body {
     display: flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:flex-end;
-} */
+    justify-content: space-evenly;
+   justify-content:center;
+   top: 250px;
+    
+
+}
 
 .login-box {
 
-    position: absolute;
     width: 502px;
     height: 340px;
     left: 400px;
@@ -16,9 +17,9 @@
     box-shadow: -3px -3px 4px rgba(242, 91, 182, 0.29), 15px 6px 4px rgba(242, 91, 182, 0.29);
     border-radius: 40px;
     display: flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:flex-end;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
 
 }
 
@@ -30,12 +31,11 @@
     width: 200px;
     height: 100px;
     flex-direction: row;
-   
+
 }
 
 .inputs {
-    
-   
+
     margin-block: 8px;
     width: 200px;
     height: 22px;
@@ -52,7 +52,7 @@
 .btn-container {
     width: 200px;
     height: 100px;
-    align-items:flex-start;
+    align-items: flex-start;
     display: flex;
     justify-content: center;
 
@@ -64,20 +64,45 @@
     background: #FABDE2;
     box-shadow: 6px 4px 4px #F692CF;
     border: 0;
-    width: 82px;
-    height: 28px;
+    width: 100px;
+    height: 32px;
     font-family: 'Marvel';
     font-style: normal;
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 22px;
     color: #CA2588;
-    
+
 }
 
-/* .login-googleAccess {
-    position: absolute;
-    width: 502px;
-    height: 340px;
-    left: 400px;
-    top: 300px;
-} */
+.dad-login {
 
+    background-color: aqua;
+    width: 450px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn-access {
+    border-radius: 50px;
+    background: #FABDE2;
+    box-shadow: 6px 4px 4px #F692CF;
+    border: 0;
+    width: 100px;
+    height: 32px;
+    font-family: 'Marvel';
+    font-style: normal;
+    margin-top: 10px;
+    font-size: 22px;
+    color: #CA2588;
+}
+
+.title-login {
+    position: absolute;
+    right: 320px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+
+}

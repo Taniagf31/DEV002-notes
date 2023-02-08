@@ -51,6 +51,10 @@ export function Login() {
                     className="container-contact"
                 >
                     <div className="container-info">
+                        <div className='dad-login'>
+                        <h1 className='title-login'>L O G I N</h1>
+                        </div>
+                        
                         <div>
                             <label htmlFor="email">
                             </label>
@@ -84,7 +88,7 @@ export function Login() {
 
             </div>
             <div className='login-googleAccess'>
-                <button onClick={handleGoogleSignIn}>Access</button>
+                <button onClick={handleGoogleSignIn} className="btn-access">Access</button>
                 <p>You don't have an account yet?     Create Account</p>
 
 

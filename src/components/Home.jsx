@@ -3,6 +3,7 @@ import {TaskList} from './TaskList';
 import {TaskForm} from './TaskForm';
 import {tasks as data} from './tasks';
 import {useState, useEffect} from 'react';
+import "./css-components/home.css";
 
 export function Home() {
     const { user, logout, loading } = useAuth()
@@ -32,11 +33,22 @@ export function Home() {
     };
     if (loading) return <h2>Loading</h2>
     return <div>
-        <h1>💗Welcome to Journal Note, {user.displayName||user.email}💗</h1>
+        <div className="dad-logout">
+        <button onClick={handledLogout} className="btn-logout" >Logout</button>
+        </div>
+
+        <h1 className="title-page">💗✨Welcome to Journal Note✨💗
+        <br />
+         {user.displayName||user.email}</h1>
+        <h2>Remember this is important to you !</h2>
         
-        <button onClick={handledLogout}>Logout</button>
+       
            <TaskForm createNote = {createNote} />
+           <div className="container-notes">
             <TaskList tasks = {tasks} deleteNote={deleteNote} />
+
+
+       </div>
     </div>  
 }
 

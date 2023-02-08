@@ -5,10 +5,10 @@ export function TaskList({ tasks, deleteNote }) {
         return <h1>NO HAY TAREAS AUN</h1>
     }
     return (
-        <div>{
+        <>{
             tasks.map((task) => (
                 <NoteCard key={task.id} task={task} deleteNote={deleteNote} />
             ))}
-        </div>
+        </>
     );
 }
