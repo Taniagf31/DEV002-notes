@@ -1,0 +1,43 @@
+body {
+
+    text-align: center;
+    color: #CA2588;
+
+}
+
+.dad-logout {
+    align-items: center;
+    width: 768px;
+    background-color: #FF92D3;
+    display: flex;
+    justify-content: right;
+    height: 50px;
+}
+
+.btn-logout {
+
+    border-radius: 50px;
+    background: #FABDE2;
+    box-shadow: 4px 2px 2px #F692CF;
+    border: 0;
+    width: 100px;
+    height: 35px;
+    font-family: 'Marvel';
+    font-style: normal;
+    font-size: 20px;
+    color: #CA2588;
+    /* margin-bottom: 15px; */
+
+
+}
+
+.container-notes {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.title-page{
+    font-size: 44px;
+}
