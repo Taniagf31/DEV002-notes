@@ -40,7 +40,7 @@ export function Home() {
         <h1 className="title-page">💗✨Welcome to Journal Note✨💗
         <br />
          {user.displayName||user.email}</h1>
-        <h2>Remember this is important to you !</h2>
+        <h2 className="subtitle-page">Remember this is important to you !</h2>
         
        
            <TaskForm createNote = {createNote} />
