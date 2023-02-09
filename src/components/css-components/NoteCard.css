@@ -18,6 +18,7 @@ body {
 
 
 .container-note {
+   
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -25,6 +26,7 @@ body {
     height: 280px;
     background-color: #FF92D3;
     text-align: center;
+    margin-top: 10px;
     left: 20px;
     top: 190px;
     font-style: normal;
@@ -41,7 +43,6 @@ body {
     height: 40px;
     border-radius: 30px;
     background: #FABDE2;
-    box-shadow: 6px 4px 4px #F692CF;
     border: 0.5px;
     border-color: #CA2588;
     font-family: 'Marvel';
@@ -54,16 +55,21 @@ body {
 
 .dad-delete {
     display: flex;
-  
     flex-direction: row-reverse;
+    background-color: #FABDE2;
+    border: none;
 
 }
 .nc-description{
    
-    height: 160px;
-    border:2px solid #CA2588;
+    height: 180px;
+    background-color: #FABDE2;
     margin: 0%;
+    border: none;
 }
 .card-title{
-    border:2px solid #CA2588;
+    background-color:  #FF92D3;
+    height: 8px;
+    justify-content: center;
+   align-items: center;
 }

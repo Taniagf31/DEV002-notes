@@ -10,10 +10,6 @@ export const tasks = [
     title: 'Example note two',
     description: 'Welcome to Journal Note 💗 Here I describe my second note'
 },
-// {
-//     id: 2,
-//     title: 'my third note',
-//     description: 'my third note'
-// }
+
 
 ]
