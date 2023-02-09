@@ -1,9 +1,9 @@
 body {
     display: flex;
     justify-content: space-evenly;
-   justify-content:center;
-   top: 250px;
-    
+    justify-content: center;
+    top: 250px;
+
 
 }
 
@@ -105,4 +105,11 @@ body {
     font-weight: 700;
     font-size: 52px;
 
+}
+
+.jn-title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
 }

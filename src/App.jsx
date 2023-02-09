@@ -16,7 +16,6 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
-
               </ProtectedRoute>
               
             } />

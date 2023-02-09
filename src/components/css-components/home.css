@@ -1,5 +1,6 @@
 body {
-
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     color: #CA2588;
 
@@ -26,7 +27,7 @@ body {
     font-style: normal;
     font-size: 20px;
     color: #CA2588;
-    /* margin-bottom: 15px; */
+   
 
 
 }
@@ -38,6 +39,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.title-page{
+
+.title-page {
     font-size: 44px;
 }
