@@ -21,6 +21,7 @@ export function TaskForm({ createNote }) {
                 onChange={(e) => setTitle(e.target.value)}
                 value={title} className="container-title"
                 autoFocus />
+                <div className="text-description">
             <textarea placeholder="Describes your note"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description} className="container-description"></textarea>
@@ -28,6 +29,7 @@ export function TaskForm({ createNote }) {
                 <button className="btn-save">
                     Save
                 </button>
+            </div>
             </div>
         </form>
 

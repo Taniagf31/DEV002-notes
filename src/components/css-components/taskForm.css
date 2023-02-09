@@ -9,48 +9,65 @@
 
 .container-title {
 
-    width: 300px;
-    height: 25px;
+    width: 260px;
+    height: 30px;
     font-family: 'Marvel';
-    border-radius: 5px;
-    background-color: #FABCE1;
+    border-radius:  20px 20px 0px 0px;
+    background-color:  #FF92D3;
     font-size: medium;
-    color:#CA2588
+    border: none;
+    color:#CA2588;
+    padding: 10px;
+    
+    
 
+
+}
+
+.text-description {
+    width: 280px;
+    height: 225px;
+    border-radius: 0px 0px 20px 20px;
+    border: none;
+    background-color: #FABCE1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .container-description {
-    width: 300px;
-    height: 150px;
+    width: 260px;
+    height: 175px;
     font-family: 'Marvel';
-    border-radius: 5px;
-    background-color: #FABCE1;
+    border-radius: 0px 0px 20px 20px;
+    border: none;
+    background-color: #FABDE2;
     font-size: medium;
-    margin-top: 8px;
     color: #CA2588;
+    padding: 10px;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .dad-save {
-    width: 300px;
-    height: 60px;
+    width: 280px;
+    height: 50px;
     display: flex;
     justify-content: flex-end;
-
+    align-items: center;
 }
 
 .btn-save {
-    width: 120px;
-    height: 30px;
-    align-items: center;
-    border-radius: 30px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
     background: #FABDE2;
-    box-shadow: 6px 4px 4px #F692CF;
-    border: 0.5px;
+    /* box-shadow: 2px 4px 4px #F692CF; */
+    border: none;
     border-color: #CA2588;
     font-family: 'Marvel';
     font-style: normal;
-    font-size: 20px;
+    font-size: 22px;
     color: #CA2588;
-
-
+    bottom: 0;
 }

@@ -43,8 +43,11 @@ export function Login() {
 
     return (
         <div className='login-body'>
+               <p className='jn-title'>Journal Note📝</p>
             <div className="login-box">
                 {error && < Alert message={error} />}
+
+             
 
 
                 <form onSubmit={handleSubmit}
