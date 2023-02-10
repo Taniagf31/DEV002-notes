@@ -1,9 +1,18 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    height: 1024;
+    width: 768;
+}
+
 body {
     display: flex;
     justify-content: space-between;
     text-align: center;
     color: #CA2588;
-
+    height: 1024;
+    width: 768;
 }
 
 
@@ -44,9 +53,6 @@ body {
     font-style: normal;
     font-size: 20px;
     color: #CA2588;
-   
-
-
 }
 
 .container-notes {

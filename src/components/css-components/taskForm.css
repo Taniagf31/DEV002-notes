@@ -12,16 +12,16 @@
     width: 260px;
     height: 30px;
     font-family: 'Marvel';
-    border-radius:  20px 20px 0px 0px;
-    background-color:  #FF92D3;
-    font-size: medium;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #FF92D3;
+    font-size: x-large;
     border: none;
-    color:#CA2588;
+    color: #CA2588;
     padding: 10px;
-    
-    
+}
 
-
+::placeholder {
+    color: #CA2588;
 }
 
 .text-description {
@@ -42,11 +42,10 @@
     border-radius: 0px 0px 20px 20px;
     border: none;
     background-color: #FABDE2;
-    font-size: medium;
+    font-size: large;
     color: #CA2588;
     padding: 10px;
     padding-bottom: 0;
-    padding-top: 0;
 }
 
 .dad-save {

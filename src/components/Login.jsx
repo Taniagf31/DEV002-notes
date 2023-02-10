@@ -58,9 +58,8 @@ export function Login() {
                         <h1 className='title-login'>L O G I N</h1>
                         </div>
                         
-                        <div>
-                            <label htmlFor="email">
-                            </label>
+                        <div className='container-inputs'>
+                        <i className="material-icons">email</i>
                             <input
                                 type="email"
                                 name="email"
@@ -69,9 +68,7 @@ export function Login() {
                                 placeholder="Email"
                                 className="inputs"
                             />
-                            <label
-                                htmlFor="password" >
-                            </label>
+                            <i className="material-icons">person</i>
                             <input
                                 type="password"
                                 name="password"
