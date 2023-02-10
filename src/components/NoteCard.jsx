@@ -8,9 +8,10 @@ export function NoteCard({ task, deleteNote }) {
             <h2 className="card-title">{task.title} </h2>
             <p className="nc-description">{task.description} </p>
             <div className="dad-delete">
-            <button onClick={() => deleteNote (task.id)} className= "btn-delete">
-                Delete
-            </button></div>
+            <i onClick={() => deleteNote (task.id)} className="material-icons">favorite</i>
+            <i onClick={() => deleteNote (task.id)} className="material-icons">edit</i>
+            <i onClick={() => deleteNote (task.id)} className="material-icons">delete</i>
+            </div>
             </div>
             </div>
         </>

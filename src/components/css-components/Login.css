@@ -1,10 +1,16 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
 body {
     display: flex;
     justify-content: space-evenly;
     justify-content: center;
     top: 250px;
-
-
+    height: 1024;
+    width: 768;
 }
 
 .login-box {
@@ -24,14 +30,37 @@ body {
 }
 
 .container-info {
-
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 200px;
+    width: 250px;
     height: 100px;
     flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
 
+.container-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 240px;
+    height: 100px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+    /* line-height: 1; */
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 .inputs {
@@ -50,13 +79,11 @@ body {
 }
 
 .btn-container {
-    width: 200px;
+    width: 240px;
     height: 100px;
-    align-items: flex-start;
     display: flex;
     justify-content: center;
-
-
+    align-items: center;
 }
 
 .btn-login {
@@ -77,10 +104,10 @@ body {
 .dad-login {
 
     background-color: aqua;
-    width: 450px;
+    /* width: 450px; */
     height: 200px;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
 
 }
 
