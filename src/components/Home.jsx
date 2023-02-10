@@ -1,48 +1,47 @@
 import { useAuth } from "../context/authContext";
 import { TaskList } from './TaskList';
 import { TaskForm } from './TaskForm';
-import { tasks as data } from './tasks';
+// import { tasks as data } from './tasks';
 import { useState, useEffect } from 'react';
 import "./css-components/home.css";
-import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc} from "firebase/firestore";
+import { getFirestore, collection, addDoc, onSnapshot, doc, deleteDoc, setDoc } from "firebase/firestore";
 import { app } from "../Firebase";
 
 const db = getFirestore(app)
+
+// Función-Componente Home (página principal)
 
 export function Home() {
     const { user, logout, loading } = useAuth()
     const [tasks, setTasks] = useState([])
     useEffect(() => {
-        setTasks(data)
+        onSnapshot(collection(db, "notes"), (querySnapshot) => { //ordenarle en fecha tal vez sort(...data)
+            const data = [];
+            querySnapshot.forEach((doc) => {
+                data.push(doc.data());
+            })
+            setTasks(data);
+            console.log(tasks);
+        })
+        
     }, []
     )
+
+    // Función para Crear Nota-------------------------
+
     function createNote(task) {
-        setTasks([...tasks, {
-            title: task.title,
-            id: tasks.length,
-            description: task.description
-        }])
         try {
-            const saveNotes = addDoc(collection(db, "notes"), {
+            addDoc(collection(db, "notes"), {
                 title: task.title,
                 id: tasks.length,
                 description: task.description
             });
-          
-            saveNotes;
-            console.log();
-          } catch (e) {
+        } catch (e) {
             console.error("Error adding document: ", e);
-          }
+        }
     }
 
-    // function saveNotes (tasks) {
-    //         addDoc(collection(db, "notes"), {
-    //             ...tasks
-    //         });
-    //         console.log(tasks.title, tasks.id, tasks.description);
-    // }
-    
+    // Función de borrado------------------------
 
     function deleteNote(taskId) {
         setTasks(tasks.filter(task => task.id !== taskId))
@@ -55,6 +54,9 @@ export function Home() {
             console.error(error);
         }
     };
+
+    // Logueo---------------------------
+
     if (loading) return <h2>Loading</h2>
     return <div>
         <div className="dad-logout">

@@ -12,3 +12,13 @@ export function TaskList({ tasks, deleteNote }) {
         </>
     );
 }
+
+// Icarito
+// getDocs
+// onSnapshot
+// getDocs ( query, ()=>{} )
+// (data)=>{}
+// Sebastian Silva (él/him)  to  Everyone 8:08 AM
+// querySnapshot
+// Sebastian Silva (él/him) 8:18 AM
+// key="..."
