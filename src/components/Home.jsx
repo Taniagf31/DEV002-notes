@@ -4,10 +4,10 @@ import { TaskForm } from './TaskForm';
 // import { tasks as data } from './tasks';
 import { useState, useEffect } from 'react';
 import "./css-components/home.css";
-import { getFirestore, collection, addDoc, onSnapshot, doc, deleteDoc, setDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { app } from "../Firebase";
 
-const db = getFirestore(app)
+export const db = getFirestore(app)
 
 // Función-Componente Home (página principal)
 
@@ -23,7 +23,7 @@ export function Home() {
             setTasks(data);
             console.log(tasks);
         })
-        
+
     }, []
     )
 
@@ -43,9 +43,23 @@ export function Home() {
 
     // Función de borrado------------------------
 
-    function deleteNote(taskId) {
-        setTasks(tasks.filter(task => task.id !== taskId))
+    const deleteNote = async (id) => {
+        await deleteDoc(doc(db, "notes", id));
     }
+
+
+    // function deleteNote(noteId) {
+    //     deleteDoc(doc(db, "notes", noteId))
+    //     setTasks()
+    // }
+    // console.log(deleteNote);
+
+
+    // function deleteNote(taskId) {
+    //     setTasks(tasks.filter(task => task.id !== taskId))
+    // }
+
+    // Logueo---------------------------
 
     const handledLogout = async () => {
         try {
@@ -54,8 +68,6 @@ export function Home() {
             console.error(error);
         }
     };
-
-    // Logueo---------------------------
 
     if (loading) return <h2>Loading</h2>
     return <div>
@@ -71,12 +83,9 @@ export function Home() {
 
         <TaskForm createNote={createNote} />
         <div className="container-notes">
-            <TaskList tasks={tasks} deleteNote={deleteNote} />
+            <TaskList tasks={tasks} deleteNote={deleteNote}/>
 
 
         </div>
     </div>
 }
-
-
-
