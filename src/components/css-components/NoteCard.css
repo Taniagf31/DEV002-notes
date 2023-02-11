@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body {
     margin: 0%;
     top: 0%;
@@ -18,7 +24,7 @@ body {
 
 
 .container-note {
-   
+
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -35,10 +41,22 @@ body {
     line-height: 32px;
     color: #CA2588;
     border-radius: 15px;
-    box-shadow: 4px 3px 4px rgba(242, 91, 182, 0.6);
+    box-shadow: 5px 5px 4px #F9B6DF;
 }
 
-.btn-delete {
+.dad-delete {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    background-color: #FABDE2;
+    height: 40px;
+    width: 280px;
+    border: none;
+    border-radius: 0px 0px 15px 15px;
+}
+
+/* .btn-delete {
     width: 100px;
     height: 40px;
     border-radius: 30px;
@@ -51,25 +69,30 @@ body {
     color: #CA2588;
     bottom: 0;
 
+} */
+
+.material-icons {
+    color: #CA2588;
 }
 
-.dad-delete {
+.material-icons:hover {
+    color: #FF92D3;
+}
+
+.card-title {
+    background-color: #FF92D3;
+    height: 60px;
+    width: 280px;
     display: flex;
-    flex-direction: row-reverse;
-    background-color: #FABDE2;
-    border: none;
-
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0px 0px;
 }
-.nc-description{
-   
+
+.nc-description {
+
     height: 180px;
     background-color: #FABDE2;
     margin: 0%;
     border: none;
-}
-.card-title{
-    background-color:  #FF92D3;
-    height: 8px;
-    justify-content: center;
-   align-items: center;
 }

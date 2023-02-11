@@ -1,11 +1,18 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+} */
+
+root {
+    height: 1024;
+    width: 768;
+}
 
 body {
-
-    position: relative;
-    width: 768px;
-    height: 1280px;
+    /* position: relative; */
+    /* height: 1024;
+    width: 768; */
     font-family: 'Marvel', sans-serif;
     background-color: #FCDCEF;
-    margin-top: 2%;
-    
 }

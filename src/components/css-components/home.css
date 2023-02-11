@@ -1,9 +1,35 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    height: 1024;
+    width: 768;
+}
+
 body {
     display: flex;
     justify-content: space-between;
     text-align: center;
     color: #CA2588;
+    height: 1024;
+    width: 768;
+}
 
+
+.title-page {
+    font-size: 44px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.subtitle-page {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-size: 32px;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .dad-logout {
@@ -27,9 +53,6 @@ body {
     font-style: normal;
     font-size: 20px;
     color: #CA2588;
-   
-
-
 }
 
 .container-notes {
@@ -38,8 +61,4 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.title-page {
-    font-size: 44px;
 }
