@@ -1,12 +1,14 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app"; //Esto no estaba inactivo...
 import {getAuth} from 'firebase/auth';
+
 // import {getFirestore} from "firebase/firestore";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyDfib1EmiLC416QHjYJ9OyZydV7Os-VCeg",
   authDomain: "journal-note-68a3b.firebaseapp.com",
@@ -19,6 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
 // export const db = getFirestore();
 
 // export const saveNotes = (title, description, id) =>
