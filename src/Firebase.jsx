@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app"; //Esto no estaba inactivo...
 import {getAuth} from 'firebase/auth';
 
-// import {getFirestore} from "firebase/firestore";
+import {getFirestore} from "firebase/firestore";
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,7 +22,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-// export const db = getFirestore();
+export const db = getFirestore();
 
 // export const saveNotes = (title, description, id) =>
 // addDoc(collection(db, "notes"), (title, description, id));

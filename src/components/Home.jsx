@@ -1,14 +1,14 @@
 import { useAuth } from "../context/authContext";
 import { TaskList } from './TaskList';
 import { TaskForm } from './TaskForm';
-// import { tasks as data } from './tasks';
 import { useState, useEffect } from 'react';
 import "./css-components/home.css";
 import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { app } from "../Firebase";
 
 export const db = getFirestore(app)
-
+// import { async } from "@firebase/util";
+// import { tasks as data } from './tasks';
 // Función-Componente Home (página principal)
 
 export function Home() {
@@ -16,17 +16,17 @@ export function Home() {
     const [tasks, setTasks] = useState([])
     useEffect(() => {
         onSnapshot(collection(db, "notes"), (querySnapshot) => { //ordenarle en fecha tal vez sort(...data)
-            const data = [];
+            const docs = [];
             querySnapshot.forEach((doc) => {
-                data.push(doc.data());
-            })
-            setTasks(data);
-            console.log(tasks);
+                docs.push({...doc.data(), id: doc.id });
+            });
+            setTasks(docs);
+            // console.log(doc.id);
+            
         })
 
     }, []
     )
-
     // Función para Crear Nota-------------------------
 
     function createNote(task) {
@@ -40,25 +40,6 @@ export function Home() {
             console.error("Error adding document: ", e);
         }
     }
-
-    // Función de borrado------------------------
-
-    const deleteNote = async (id) => {
-        await deleteDoc(doc(db, "notes", id));
-    }
-
-
-    // function deleteNote(noteId) {
-    //     deleteDoc(doc(db, "notes", noteId))
-    //     setTasks()
-    // }
-    // console.log(deleteNote);
-
-
-    // function deleteNote(taskId) {
-    //     setTasks(tasks.filter(task => task.id !== taskId))
-    // }
-
     // Logueo---------------------------
 
     const handledLogout = async () => {
@@ -74,18 +55,28 @@ export function Home() {
         <div className="dad-logout">
             <button onClick={handledLogout} className="btn-logout" >Logout</button>
         </div>
-
+       
+        
         <h1 className="title-page">💗✨Welcome to Journal Note✨💗
             <br />
             {user.displayName || user.email}</h1>
         <h2 className="subtitle-page">Remember this is important to you !</h2>
-
-
         <TaskForm createNote={createNote} />
         <div className="container-notes">
-            <TaskList tasks={tasks} deleteNote={deleteNote}/>
+            <TaskList tasks={tasks} />
 
 
         </div>
     </div>
 }
+
+    // function deleteNote(noteId) {
+    //     deleteDoc(doc(db, "notes", noteId))
+    //     setTasks()
+    // }
+    // console.log(deleteNote);
+
+
+    // function deleteNote(taskId) {
+    //     setTasks(tasks.filter(task => task.id !== taskId))
+    // }

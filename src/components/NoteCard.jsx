@@ -1,24 +1,15 @@
 import "./css-components/NoteCard.css";
-// import { deleteDoc, doc, setDoc } from "firebase/firestore";
-// import { db } from "./Home";
+import { deleteDoc, doc, setDoc, collection } from "firebase/firestore";
+import { db } from "./Home";
 
 // Función de borrado--------------------------------------------------------
+ const deleteNote = async (id) => {
+    const deleteId = id.toString()
+    await deleteDoc(doc(db, "notes", deleteId));
 
-// const deleteNote = async (id) => {
-//         await deleteDoc(doc(db, "notes", id))
-//     }
+}
 
-export function NoteCard({ task, deleteNote }) {
-
-    // const deleteNote = async (id) => {
-    //     await deleteDoc(doc(db, "notes", id))
-    // }
-
-    // function deleteNote () {
-    //    async (id) => {
-    //         await deleteDoc(db, "notes", id)
-    //     }
-    // }
+export function NoteCard({ task}) {
 
     return (
 
