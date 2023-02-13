@@ -7,11 +7,13 @@ export function TaskForm({ createNote }) {
     const [description, setDescription] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-
         createNote({
             title,
             description
         });
+
+        saveNotes(title, description, id)
+        console.log(saveNotes(title, description));
 
         setTitle("")
         setDescription("")
