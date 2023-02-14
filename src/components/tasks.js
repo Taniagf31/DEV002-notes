@@ -1,19 +1,14 @@
-export const tasks = [
+// export const tasks = [
     
-{
-    id: 0,
-    title: 'my first note',
-    description: 'my first note'
-},
-{
-    id: 1,
-    title: 'my second note',
-    description: 'my second note'
-},
-{
-    id: 2,
-    title: 'my third note',
-    description: 'my third note'
-}
+// {
+//     id: 0,
+//     title: 'Example note one',
+//     description: 'Welcome to Journal Note 💗 Here I describe my first note'
+// },
+// {
+//     id: 1,
+//     title: 'Example note two',
+//     description: 'Welcome to Journal Note 💗 Here I describe my second note'
+// },
 
-]
+

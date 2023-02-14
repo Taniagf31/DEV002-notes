@@ -1,12 +1,26 @@
-export function NoteCard({ task, deleteNote }) {
+import { useContext } from "react";
+import { NoteContext } from "../context/NoteContext"
+import "./css-components/NoteCard.css";
+
+export function NoteCard({ journal }) {
+
+    const { deleteNote, setEditNote } = useContext(NoteContext)
+
+    console.log (journal);
 
     return (
-        <div >
-            <h1>{task.title} </h1>
-            <p>{task.description} </p>
-            <button onClick={() => deleteNote (task.id)}>
-                Delete Note
-            </button>
-        </div>
+
+        <>
+            <div className="container-all">
+                <div className="container-note">
+                    <h2 className="card-title">{journal.title} </h2>
+                    <p className="nc-description">{journal.description} </p>
+                    <div className="dad-delete">
+                        <i onClick={() => setEditNote(journal.id)} className="material-icons">edit</i>
+                        <i onClick={() => deleteNote(journal.id)} className="material-icons">delete</i>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }

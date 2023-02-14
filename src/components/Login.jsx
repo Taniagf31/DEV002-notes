@@ -43,17 +43,23 @@ export function Login() {
 
     return (
         <div className='login-body'>
+               <p className='jn-title'>Journal Note📝</p>
             <div className="login-box">
                 {error && < Alert message={error} />}
+
+             
 
 
                 <form onSubmit={handleSubmit}
                     className="container-contact"
                 >
                     <div className="container-info">
-                        <div>
-                            <label htmlFor="email">
-                            </label>
+                        <div className='dad-login'>
+                        <h1 className='title-login'>L O G I N</h1>
+                        </div>
+                        
+                        <div className='container-inputs'>
+                        <i className="material-icons">email</i>
                             <input
                                 type="email"
                                 name="email"
@@ -62,9 +68,7 @@ export function Login() {
                                 placeholder="Email"
                                 className="inputs"
                             />
-                            <label
-                                htmlFor="password" >
-                            </label>
+                            <i className="material-icons">person</i>
                             <input
                                 type="password"
                                 name="password"
@@ -84,7 +88,7 @@ export function Login() {
 
             </div>
             <div className='login-googleAccess'>
-                <button onClick={handleGoogleSignIn}>Access</button>
+                <button onClick={handleGoogleSignIn} className="btn-access">Access</button>
                 <p>You don't have an account yet?     Create Account</p>
 
 

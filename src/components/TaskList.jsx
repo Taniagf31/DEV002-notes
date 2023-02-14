@@ -1,14 +1,20 @@
+import { useContext } from 'react';
 import { NoteCard } from './NoteCard'
-export function TaskList({ tasks, deleteNote }) {
+import { NoteContext } from '../context/NoteContext';
 
-    if (tasks.length === 0) {
+export function TaskList() {
+
+    const { journal } = useContext(NoteContext)
+
+    if (journal.length === 0) {
         return <h1>NO HAY TAREAS AUN</h1>
     }
+
     return (
-        <div>{
-            tasks.map((task) => (
-                <NoteCard key={task.id} task={task} deleteNote={deleteNote} />
+        <>{
+            journal.map((journal) => (
+                <NoteCard key={journal.id} journal={journal} />
             ))}
-        </div>
+        </>
     );
 }

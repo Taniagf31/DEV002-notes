@@ -4,26 +4,27 @@ import { Login } from './components/Login';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { Register } from './components/Register';
 import { AuthProvider } from './context/authContext';
+import { NoteContextProvider } from './context/NoteContext';
 
 function App() {
   return (
     <div className='page'>
 
       <AuthProvider>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <Home />
+        <NoteContextProvider>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
 
-              </ProtectedRoute>
-              
-            } />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-
+              } />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </NoteContextProvider>
       </AuthProvider>
     </div>
   )

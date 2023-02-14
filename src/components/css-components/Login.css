@@ -1,13 +1,20 @@
-/* .login-body {
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
     display: flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:flex-end;
-} */
+    justify-content: space-evenly;
+    justify-content: center;
+    top: 250px;
+    height: 1024;
+    width: 768;
+}
 
 .login-box {
 
-    position: absolute;
     width: 502px;
     height: 340px;
     left: 400px;
@@ -16,26 +23,48 @@
     box-shadow: -3px -3px 4px rgba(242, 91, 182, 0.29), 15px 6px 4px rgba(242, 91, 182, 0.29);
     border-radius: 40px;
     display: flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:flex-end;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
 
 }
 
 .container-info {
-
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 200px;
+    width: 250px;
     height: 100px;
     flex-direction: row;
-   
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.container-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 240px;
+    height: 100px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+    /* line-height: 1; */
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 .inputs {
-    
-   
+
     margin-block: 8px;
     width: 200px;
     height: 22px;
@@ -50,13 +79,11 @@
 }
 
 .btn-container {
-    width: 200px;
+    width: 240px;
     height: 100px;
-    align-items:flex-start;
     display: flex;
     justify-content: center;
-
-
+    align-items: center;
 }
 
 .btn-login {
@@ -64,20 +91,52 @@
     background: #FABDE2;
     box-shadow: 6px 4px 4px #F692CF;
     border: 0;
-    width: 82px;
-    height: 28px;
+    width: 100px;
+    height: 32px;
     font-family: 'Marvel';
     font-style: normal;
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 22px;
     color: #CA2588;
-    
+
 }
 
-/* .login-googleAccess {
-    position: absolute;
-    width: 502px;
-    height: 340px;
-    left: 400px;
-    top: 300px;
-} */
+.dad-login {
 
+    background-color: aqua;
+    /* width: 450px; */
+    height: 200px;
+    /* display: flex; */
+    /* justify-content: center; */
+
+}
+
+.btn-access {
+    border-radius: 50px;
+    background: #FABDE2;
+    box-shadow: 6px 4px 4px #F692CF;
+    border: 0;
+    width: 100px;
+    height: 32px;
+    font-family: 'Marvel';
+    font-style: normal;
+    margin-top: 10px;
+    font-size: 22px;
+    color: #CA2588;
+}
+
+.title-login {
+    position: absolute;
+    right: 320px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+
+}
+
+.jn-title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 72px;
+}
