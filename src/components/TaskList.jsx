@@ -1,25 +1,20 @@
+import { useContext } from 'react';
 import { NoteCard } from './NoteCard'
+import { NoteContext } from '../context/NoteContext';
 
-export function TaskList({ tasks, deleteNote }) {
+export function TaskList() {
 
-    if (tasks.length === 0) {
+    const { journal } = useContext(NoteContext)
+
+    if (journal.length === 0) {
         return <h1>NO HAY TAREAS AUN</h1>
     }
+
     return (
         <>{
-            tasks.map((task) => (
-                <NoteCard key={task.id} task={task} deleteNote={deleteNote} />
+            journal.map((journal) => (
+                <NoteCard key={journal.id} journal={journal} />
             ))}
         </>
     );
 }
-
-// Icarito
-// getDocs
-// onSnapshot
-// getDocs ( query, ()=>{} )
-// (data)=>{}
-// Sebastian Silva (él/him)  to  Everyone 8:08 AM
-// querySnapshot
-// Sebastian Silva (él/him) 8:18 AM
-// key="..."
