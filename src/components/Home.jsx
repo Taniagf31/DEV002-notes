@@ -119,7 +119,7 @@ export const Home = () => {
             <div className="row">
                 {/* sección de formulario */}
                 <div className="col-md-4">
-                    <h3>Ingresar usuario</h3>
+                    <h3>Add note</h3>
                     <form onSubmit={guardarDatos}>
                         <div className="card card-body">
                             <div className="form-group">
@@ -135,7 +135,7 @@ export const Home = () => {
                 </div>
                 {/* esta sección será la lista de nuestros usuarios */}
                 <div className="col-md-8">
-                    <h2 className="text-center-mb-5">Lista de usuarios</h2>
+                    <h2 className="text-center-mb-3">Lista de usuarios</h2>
                     <div className="container card">
                         <div className="card-body">
                             {
