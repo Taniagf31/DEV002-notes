@@ -3,7 +3,6 @@ import { useAuth } from "../context/authContext";
 import "./css-components/home.css";
 import { deleteDoc, doc, setDoc, collection, addDoc, getDoc, getDocs } from "firebase/firestore";
 import { async } from "@firebase/util";
-
 import { db } from "../Firebase"
 
 export const Home = () => {
@@ -104,7 +103,6 @@ export const Home = () => {
     };
 
     if (loading) return <h2>Loading</h2>
-
 
     return <>
         < div >
