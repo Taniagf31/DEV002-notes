@@ -104,7 +104,8 @@ export const Home = () => {
 
     if (loading) return <h2>Loading</h2>
 
-    return <>
+    return (
+    <>
         < div >
             <div className="dad-logout">
                 <button onClick={handledLogout} className="btn-logout" >Logout</button>
@@ -144,11 +145,11 @@ export const Home = () => {
                                         <p>profesión:{list.profesion}</p>
 
                                         <button className="btn btn-danger" onClick={() => deleteUser(list.id)}>
-                                            eliminar
+                                            <i className="material-icons">delete</i>
                                         </button>
 
                                         <button className="btn btn-success" onClick={() => setSubId(list.id)}>
-                                            actualizar
+                                            <i className="material-icons">edit</i>
                                         </button>
                                         <br />
 
@@ -161,6 +162,7 @@ export const Home = () => {
             </div>
         </div >
     </>
+    )
 }
 
 
