@@ -22,13 +22,13 @@ export function TaskForm() {
     return (
 
         <form onSubmit={handleSubmit} className="box">
-            <input placeholder="Write your title note"
+            <input type='text' name="Write your title note" placeholder="Write your title note"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title} className="container-title"
                 autoFocus
             />
             <div className="text-description">
-                <textarea placeholder="Describes your note"
+                <textarea type='text' name="Describes your note" placeholder="Describes your note"
                     onChange={(e) => setDescription(e.target.value)}
                     value={description} className="container-description"></textarea>
                 <div className="dad-save">
