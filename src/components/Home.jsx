@@ -5,19 +5,20 @@ import { deleteDoc, doc, setDoc, collection, addDoc, getDoc, getDocs } from "fir
 import { async } from "@firebase/util";
 import { db } from "../Firebase"
 
-export const Home = () => {
-    const { user, logout, loading } = useAuth()
+export const Home = ({emailUser}) => {
+    
+      // const { user, logout, loading } = useAuth()
 
-    const valorInicial = {
-        nombre: '',
-        profesion: ''
-    }
+    const estadoInicial = {
+        title: '',
+        description: ''       
+    };
 
     // variables de estado
 
-    const [noteUser, setNoteUser] = useState(valorInicial)
-    const [lista, setLista] = useState([])
-    const [subId, setSubId] = useState('')
+    const [noteUser, setNoteUser] = useState(estadoInicial)
+    const [noteData, setNoteData] = useState([])
+    const [noteId, setNoteId] = useState('')
 
     const capturarInputs = (e) => {
         const { name, value } = e.target;
@@ -29,7 +30,7 @@ export const Home = () => {
     const guardarDatos = async (e) => {
         e.preventDefault();
 
-        if (subId === '') {
+        if (noteId === '') {
             try {
                 await addDoc(collection(db, 'notes'), {
                     ...noteUser
@@ -40,19 +41,19 @@ export const Home = () => {
         }
 
         else {
-            await setDoc(doc(db, 'notes', subId), {
+            await setDoc(doc(db, 'notes', noteId), {
                 ...noteUser
             })
         }
 
-        setNoteUser({ ...valorInicial })
-        setSubId('')
+        setNoteUser({ ...estadoInicial })
+        setNoteId('')
     }
 
-    // funciones para renderizar la lista
+    // funciones para renderizar la noteData
 
     useEffect(() => {
-        const getLista = async () => {
+        const getNoteData = async () => {
 
             try {
                 const querySnapShot = await getDocs(collection(db, 'notes'))
@@ -60,21 +61,22 @@ export const Home = () => {
                 querySnapShot.forEach((doc) => {
                     docs.push({ ...doc.data(), id: doc.id })
                 })
-                setLista(docs)
+                setNoteData(docs)
             } catch (error) {
                 console.log(error)
             }
         }
-        getLista()
-    }, [lista])
+        getNoteData()
+    }, []) // Se quitó noteData para no hacer una solicitud con useState
 
-    // funcion para eliminar el usuario
 
-    const deleteUser = async (id) => {
+    // funcion para eliminar el Nota
+
+    const deleteNote = async (id) => {
         await deleteDoc(doc(db, 'notes', id))
     }
 
-    // funcion para actualizar el usuario
+    // funcion para actualizar el Nota
 
     const getOne = async (id) => {
         try {
@@ -87,81 +89,80 @@ export const Home = () => {
     }
 
     useEffect(() => {
-        if (subId !== '') {
-            getOne(subId)
+        if (noteId !== '') {
+            getOne(noteId)
         }
-    }, [subId])
+    }, [noteId])
 
     // Logueo---------------------------
 
     const handledLogout = async () => {
         try {
-            await logout();
+            // await logout();
         } catch (error) {
             console.error(error);
         }
     };
 
-    if (loading) return <h2>Loading</h2>
+    // if (loading) return <h2>Loading</h2>
 
     return (
-    <>
-        < div >
-            <div className="dad-logout">
-                <button onClick={handledLogout} className="btn-logout" >Logout</button>
-            </div>
-
-            <h1 className="title-page">💗✨Welcome to Journal Note✨💗
-                <br />
-                {user.displayName || user.email}
-            </h1>
-            <h2 className="subtitle-page">Remember this is important to you !</h2>
-            <div className="row">
-                {/* sección de formulario */}
-                <div className="col-md-4">
-                    <h3>Add note</h3>
-                    <form onSubmit={guardarDatos}>
-                        <div className="card card-body">
-                            <div className="form-group">
-                                <input type="text" name="nombre" className="form-control" placeholder="ingresa nombre de usuario" onChange={capturarInputs} value={noteUser.nombre} />
-                                <input type="text" name="profesión" className="form-control" placeholder="ingresa profesión" onChange={capturarInputs} value={noteUser.profesion} />
-                            </div>
-                            <button className="btn btn-primary">
-                                {subId === '' ? 'Guardar' : 'Actualizar'}
-                            </button>
-
-                        </div>
-                    </form>
+        <>
+            < div >
+                <div className="dad-logout">
+                    <button onClick={handledLogout} className="btn-logout" >Logout</button>
                 </div>
-                {/* esta sección será la lista de nuestros usuarios */}
-                <div className="col-md-8">
-                    <h2 className="text-center-mb-3">Lista de usuarios</h2>
-                    <div className="container card">
-                        <div className="card-body">
-                            {
-                                lista.map(list => (
-                                    <div key={list.id}>
-                                        <p>nombre:{list.nombre}</p>
-                                        <p>profesión:{list.profesion}</p>
 
-                                        <button className="btn btn-danger" onClick={() => deleteUser(list.id)}>
-                                            <i className="material-icons">delete</i>
-                                        </button>
+                <h1 className="title-page">💗✨Welcome to Journal Note✨💗
+                    <br />
+                    {emailUser.displayName || emailUser.email}
+                </h1>
+                <h2 className="subtitle-page">Remember this is important to you !</h2>
+                <div className="row">
+                    {/* sección de formulario */}
+                    <div className="col-md-4">
+                        <h3>Add note</h3>
+                        <form onSubmit={guardarDatos}>
+                            <div className="card card-body">
+                                <div className="form-group">
+                                    <input type="text" name="title" className="form-control" placeholder="Title Note" onChange={capturarInputs} value={noteUser.title} />
+                                    <textarea type="text" name="description" className="form-control" placeholder="Description Note" onChange={capturarInputs} value={noteUser.description} cols="30" rows="10"></textarea>
+                                </div>
+                                <button className="btn btn-primary">
+                                    {noteId === '' ? 'Save' : 'Actualize'}
+                                </button>
 
-                                        <button className="btn btn-success" onClick={() => setSubId(list.id)}>
-                                            <i className="material-icons">edit</i>
-                                        </button>
-                                        <br />
+                            </div>
+                        </form>
+                    </div>
+                    {/* esta sección será la noteData de nuestros Notas */}
+                    <div className="col-md-8">
+                        <div className="container card">
+                            <div className="card-body">
+                                {
+                                    noteData.map(noteDat => (
+                                        <div key={noteDat.id}>
+                                            <p>{noteDat.title}</p>
+                                            <p>{noteDat.description}</p>
 
-                                    </div>
-                                ))
-                            }
+                                            <button className="btn btn-danger" onClick={() => deleteNote(noteDat.id)}>
+                                                <i className="material-icons">delete</i>
+                                            </button>
+
+                                            <button className="btn btn-success" onClick={() => setNoteId(noteDat.id)}>
+                                                <i className="material-icons">edit</i>
+                                            </button>
+                                            <br />
+
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div >
-    </>
+            </div >
+        </>
     )
 }
 
@@ -169,7 +170,7 @@ export const Home = () => {
 
 // import React, { useState } from "react";
 
-// import { TaskList } from './TaskList';
+// import { TasknoteDat } from './TasknoteDat';
 // import { TaskForm } from './TaskForm';
 
 // // import { app } from "../Firebase";
@@ -238,9 +239,33 @@ export const Home = () => {
 //         <TaskForm />
 
 //         <div className="container-notes">
-//             <TaskList />
+//             <TasknoteDat />
 //         </div>
 //     </>
 // }}
 
 
+ // Pasar la información de User al estado para saludo y tal vez más.
+
+//     import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+// const auth = getAuth();
+// createUserWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     // Signed in 
+//     const user = userCredential.user;
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // ..
+//   });
+
+  // Fin de firebase auth copia pastel...
+    
+    // const auth = useAuth()
+
+    // if (!auth?.user) {
+    //     return <div>Hola</div>
+    // }

@@ -11,7 +11,7 @@ export const Login = () => {
     const handlerSubmit = async (e) => {
         e.preventDefault()
         const email = e.target.email.value;
-        const password = e.target.pasword.value;
+        const password = e.target.password.value;
 
         if (register) {
             await createUserWithEmailAndPassword(auth, email, password)
