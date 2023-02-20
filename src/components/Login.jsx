@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { appFirebase } from '../Firebase' // Checar más adelante...   -----------------------------------------------------
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../Firebase' // Checar más adelante...   -----------------------------------------------------
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
-const auth = getAuth( appFirebase )
+
 
 export const Login = () => {
 
