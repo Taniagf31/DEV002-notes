@@ -99,22 +99,10 @@ export const Home = ({emailUser}) => {
     }
 
     useEffect(() => {
-        if (noteId !== '') {
+        if (!noteId) {
             getOne(noteId)
         }
     }, [noteId])
-
-    // Logueo---------------------------
-
-    // const handledLogout = async () => {
-    //     try {
-    //         await logout();
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-
-    // if (loading) return <h2>Loading</h2>
 
     return (
         <>
@@ -179,6 +167,17 @@ export const Home = ({emailUser}) => {
 }
 
 
+// Logueo---------------------------
+
+    // const handledLogout = async () => {
+    //     try {
+    //         await logout();
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // };
+
+    // if (loading) return <h2>Loading</h2>
 
 // import React, { useState } from "react";
 
