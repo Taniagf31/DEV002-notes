@@ -8,9 +8,7 @@ import {signOut, getAuth} from 'firebase/auth'
 
 
 export const Home = ({emailUser}) => {
-    
-      // const { user, logout, loading } = useAuth()
-      
+          
     const estadoInicial = {
         title: '',
         description: ''       
