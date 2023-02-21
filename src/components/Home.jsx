@@ -136,21 +136,21 @@ export const Home = ({emailUser}) => {
                     </div>
                     {/* esta sección será la noteData de nuestras Notas */}
                     <div className="container-body">
-                    {/* <div className="container-all"> */}
                         <div className="container-card">
                                 {
                                     noteData.map(noteDat => (
                                         <div className="card" key={noteDat.id}>
                                             <p className="card-title">{noteDat.title}</p>
                                             <p className="nc-description">{noteDat.description}</p>
-
-                                            <button onClick={() => deleteNote(noteDat.id)}>
+                                        <div className="dad-btns">
+                                            <button className="btn-delete" onClick={() => deleteNote(noteDat.id)}>
                                                 <i className="material-icons">delete</i>
                                             </button>
 
-                                            <button className="" onClick={() => setNoteId(noteDat.id)}>
+                                            <button className="btn-edit" onClick={() => setNoteId(noteDat.id)}>
                                                 <i className="material-icons">edit</i>
                                             </button>
+                                            </div>
                                             <br />
 
                                         </div>
