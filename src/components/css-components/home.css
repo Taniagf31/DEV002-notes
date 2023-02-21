@@ -21,7 +21,7 @@ body {
 }
 
 .dad-logout {
-    width: 100%;
+    width: 768px;
     align-items: center;
     background-color: #FF92D3;
     display: flex;
@@ -41,6 +41,7 @@ body {
     font-style: normal;
     font-size: 20px;
     color: #CA2588;
+    margin-right: 10px;
 }
 
 .title-page {
@@ -62,11 +63,11 @@ body {
 
 .container-title {
 
-    width: 260px;
+    width: 280px;
     height: 30px;
     font-family: 'Marvel';
     border-radius: 20px 20px 0px 0px;
-    background-color: #BFA2DB;
+    background: #BFA2DB;
     font-size: x-large;
     border: none;
     color: #CA2588;
@@ -89,7 +90,6 @@ h3 {
     justify-content:center;
     flex-direction: column;
     align-items: center;
-    /* align-items: center; */
     font-family: 'Marvel';
 }
 
@@ -98,11 +98,12 @@ h3 {
 .text-description {
     width: 280px;
     height: 225px;
+    padding: 10px;
     font-family: 'Marvel';
-    font-size: large;
+    font-size: x-large;
     border-radius: 0px 0px 20px 20px;
     border: none;
-    background-color: #D9ACF5;
+    background: #D9ACF5;
     color: #CA2588;
     display: flex;
     /* flex-direction: column; */
@@ -115,8 +116,8 @@ h3 {
     font-family: 'Marvel';
     border-radius: 0px 0px 20px 20px;
     border: none;
-    background-color: #FABDE2;
-    font-size: large;
+    background: #FABDE2;
+    font-size: x-large;
     color: #CA2588;
     padding: 10px;
     padding-bottom: 0;
@@ -139,28 +140,32 @@ h3 {
     border: none;
     border-color: #CA2588;
     font-family: 'Marvel';
-    font-style: normal;
-    font-size: 22px;
+    /* font-style: ; */
+    font-size: 24px;
     color: #CA2588;
     bottom: 0;
 }
 .container-body{
     width: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content:center;
-
+    /* background-color: purple; */
 }
 .container-card{
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content:center;
+    flex-wrap: wrap;
+    /* background-color: turquoise; */
 
 }
 
 .card{
     margin: 6px;
-   
+   /* background-color: yellowgreen; */
+   width: fit-content;
 }
 
 .container-note {
@@ -192,35 +197,67 @@ h3 {
     height: 40px;
     width: 280px;
     border: none;
-    border-radius: 0px 0px 15px 15px;
+    border-radius:  0px 0px 20px 20px;
+}
+
+.dad-btns{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 280px;
+    height: 40px;
+    border: none;
+    border-radius:  0px 0px 20px 20px;
+    background-color:#FABDE2;
+}
+
+.btn-delete{
+    width: auto;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.btn-edit{
+    width: auto;
+    background-color: transparent;
+    margin-right: 10px;
 }
 
 .material-icons {
-    color: #CA2588;
+    color: darkviolet;
 }
 
 .material-icons:hover {
-    color: #FF92D3;
+    color: darkviolet;
 }
 
 .card-title {
-    background-color: #FF92D3;
+    background: #FF92D3;
+    color: darkviolet;
     height: 60px;
-    width: 290px;
+    width: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 15px 15px 0px 0px;
+    font-size: x-large;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .nc-description {
 
     height: 180px;
-    background-color: #FABDE2;
-    margin: 0%;
+    width: 280px;
+    font-size: x-large;
+    background: #FABDE2;
+    color: darkviolet;
+    margin: 0;
     border: none;
 }
+
+/* Mediaqueries */
+
+
 
 /* ------------------------------------------------------------------------------------------------------------ */
 /* .container-notes {

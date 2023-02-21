@@ -1,48 +1,64 @@
 * {
     padding: 0;
     border: 0;
-    margin: 0;
+    margin: 0px;
 }
+
 
 body {
     display: flex;
-    justify-content: space-evenly;
+    color: #CA2588;
+    height: auto;
+    width: 100%;
+
+}
+.container-container{
+
+    display: flex;
     justify-content: center;
-    top: 250px;
-    height: 1024;
-    width: 768;
+    width: 768px;
+    
+    
 }
 
 .login-box {
 
-    width: 502px;
-    height: 340px;
-    left: 400px;
-    top: 300px;
+    width: 520px;
+    height: 380px;
     background: #FDE4F3;
     box-shadow: -3px -3px 4px rgba(242, 91, 182, 0.29), 15px 6px 4px rgba(242, 91, 182, 0.29);
     border-radius: 40px;
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    margin-top: 260px;
 
+}
+
+.title-login {
+
+    justify-content: flex-start;
+    flex-direction: initial;
+    width: 250px;
+    margin-bottom: 10px;
 }
 
 .container-info {
     display: flex;
     width: 250px;
     height: 100px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    
 }
 
 .container-inputs {
+  
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
     width: 240px;
     height: 100px;
 }
@@ -52,7 +68,6 @@ body {
     font-weight: bold;
     font-style: normal;
     font-size: 24px;
-    /* line-height: 1; */
     letter-spacing: normal;
     text-transform: none;
     display: inline-block;
@@ -67,7 +82,7 @@ body {
 
     margin-block: 8px;
     width: 200px;
-    height: 22px;
+    height: 30px;
     display: flex;
     align-content: center;
     background: rgba(242, 91, 182, 0.29);
@@ -75,7 +90,7 @@ body {
     border-radius: 5px;
     border: none;
     font-family: 'Marvel', sans-serif;
-    font-size: medium;
+    font-size: large;
 }
 
 .btn-container {
@@ -104,29 +119,28 @@ body {
 .dad-login {
 
     background-color: aqua;
-    /* width: 450px; */
     height: 200px;
-    /* display: flex; */
-    /* justify-content: center; */
+   
 
 }
 
 .btn-access {
-    border-radius: 50px;
-    background: #FABDE2;
-    box-shadow: 6px 4px 4px #F692CF;
+ 
+    background: #FCDCEF;
     border: 0;
-    width: 100px;
+    justify-content: center;
+    flex-direction: row;
+    width: 250px;
     height: 32px;
     font-family: 'Marvel';
-    font-style: normal;
-    margin-top: 10px;
+    font-style:normal;
+    margin-top: 20px;
     font-size: 22px;
     color: #CA2588;
 }
 
 .title-login {
-    position: absolute;
+    
     right: 320px;
     font-style: normal;
     font-weight: 700;

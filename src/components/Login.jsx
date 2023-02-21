@@ -26,32 +26,30 @@ export const Login = () => {
 
 <div>
     {/* Sección de formulario */}
-    <div className='col-md-4'>
-        <div className='mt-5 ms-5'>
-            <h1>{register ? 'register' : 'Login'}</h1>
+    <div className='container-container'>
+        <div className='login-box'>
+        <div className='container-info'>
+            <h1 className='title-login'>{register ? 'Register' : 'L o g i n'}</h1>
             <form onSubmit={handlerSubmit}>
-                <div className='mb-3'>
-                    <label className='form-label'>
-                        Email AdressAdress
+                <div className='container-inputs'>
+                    <label>
                     </label>
-                    <input type="email" className='form-control' placeholder='put email' id='email' required />
-                </div>
-                <div className='mb-4'>
-                    <label className='form-label'>
-                        Password
+                    <input type="email" className='inputs' placeholder='write your email' id='email' required />
+               
+                    <label>
                     </label>
-                    <input type="password" className='form-control' placeholder='put password' id='password' required />
-                </div>
+                    <input type="password" className='inputs' placeholder='write your password' id='password' required />
+                 </div>
 
-                <button className='btn btn-primary' type='submit' >
-                    {register ? 'register' : 'Login'}
+                <button className='btn-login' type='submit' >
+                    {register ? 'Register' : 'Login'}
                 </button>
 
             </form>
 
-        <div>
-    <button className='btn btn-secondary' onClick={() => setRegister(!register)}>
-    {register ? 'Ya tienes cuenta? Inicia sesión' : 'No tienes cuenta? Registrate' }
+        <div></div>
+    <button className='btn-access' onClick={() => setRegister(!register)}>
+    {register ? 'You have an account? Login' : 'You do not have an account? Register' }
     </button>
     </div>
         </div>

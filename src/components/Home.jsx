@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./css-components/home.css";
+import "./css-components/login.css";
 import { deleteDoc, doc, setDoc, collection, addDoc, getDoc, getDocs } from "firebase/firestore";
 import { db, auth } from "../Firebase"
 import {signOut, getAuth} from 'firebase/auth'
 // import { async } from "@firebase/util";
-
 
 
 export const Home = ({emailUser}) => {
@@ -67,7 +67,6 @@ export const Home = ({emailUser}) => {
     // funciones para renderizar la noteData
 
     useEffect(() => {
-        console.log('se ejecutó')
         setActualizar(false)
         const getNoteData = async () => {
 
@@ -83,7 +82,7 @@ export const Home = ({emailUser}) => {
             }
         }
         getNoteData()
-    }, [actualizar]) // Se quitó noteData para no hacer una solicitud con useState
+    }, [actualizar]) 
 
 
     // funcion para actualizar el Nota
@@ -99,7 +98,7 @@ export const Home = ({emailUser}) => {
     }
 
     useEffect(() => {
-        if (!noteId) {
+        if (noteId !== '') {
             getOne(noteId)
         }
     }, [noteId])
@@ -134,23 +133,23 @@ export const Home = ({emailUser}) => {
                             </div>
                         </form>
                     </div>
-                    {/* esta sección será la noteData de nuestras Notas */}
+                    {/* esta sección es la noteData de nuestras Notas */}
                     <div className="container-body">
-                    {/* <div className="container-all"> */}
                         <div className="container-card">
                                 {
                                     noteData.map(noteDat => (
                                         <div className="card" key={noteDat.id}>
                                             <p className="card-title">{noteDat.title}</p>
                                             <p className="nc-description">{noteDat.description}</p>
-
-                                            <button onClick={() => deleteNote(noteDat.id)}>
+                                        <div className="dad-btns">
+                                            <button className="btn-delete" onClick={() => deleteNote(noteDat.id)}>
                                                 <i className="material-icons">delete</i>
                                             </button>
 
-                                            <button className="" onClick={() => setNoteId(noteDat.id)}>
+                                            <button className="btn-edit" onClick={() => setNoteId(noteDat.id)}>
                                                 <i className="material-icons">edit</i>
                                             </button>
+                                            </div>
                                             <br />
 
                                         </div>
@@ -166,117 +165,3 @@ export const Home = ({emailUser}) => {
     )
 }
 
-
-// Logueo---------------------------
-
-    // const handledLogout = async () => {
-    //     try {
-    //         await logout();
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-
-    // if (loading) return <h2>Loading</h2>
-
-// import React, { useState } from "react";
-
-// import { TasknoteDat } from './TasknoteDat';
-// import { TaskForm } from './TaskForm';
-
-// // import { app } from "../Firebase";
-
-
-// export function Home() {
-//     const { noteUser, logout, loading } = useAuth()
-
-//     const createNote = {
-//         title: '',
-//         description: ''
-//     };
-
-//     const [note, setNote] = useState(createNote);
-
-//     const noteForm = (e) =>{
-//         const {name, value} = e.target;
-//         setNote({...note [name]:value})
-//     }
-
-//     const saveNote = async(e)=>{
-//         e.preventDefault();
-//         setNote({...createNote})
-//     }
-
-//     const [description, setDescription] = useState('');
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         createNote({
-//             title,
-//             description
-//         });
-
-//         saveNotes(title, description, id)
-//         console.log(saveNotes(title, description));
-
-//         setTitle("")
-//         setDescription("")
-//     };
-
-//     // Logueo---------------------------
-
-//     const handledLogout = async () => {
-//         try {
-//             await logout();
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     };
-
-//     if (loading) return <h2>Loading</h2>
-
-
-//     return <>
-//         <div className="dad-logout">
-//             <button onClick={handledLogout} className="btn-logout" >Logout</button>
-//         </div>
-
-//         <h1 className="title-page">💗✨Welcome to Journal Note✨💗
-//             <br />
-//             {noteUser.displayName || noteUser.email}
-//         </h1>
-
-//         <h2 className="subtitle-page">Remember this is important to you !</h2>
-
-//         <TaskForm />
-
-//         <div className="container-notes">
-//             <TasknoteDat />
-//         </div>
-//     </>
-// }}
-
-
- // Pasar la información de User al estado para saludo y tal vez más.
-
-//     import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-// const auth = getAuth();
-// createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in 
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
-
-  // Fin de firebase auth copia pastel...
-    
-    // const auth = useAuth()
-
-    // if (!auth?.user) {
-    //     return <div>Hola</div>
-    // }
