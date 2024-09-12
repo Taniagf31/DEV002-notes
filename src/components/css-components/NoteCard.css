@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    margin: 0%;
+    top: 0%;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.container-all {
+
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+
+.container-note {
+
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 280px;
+    height: 280px;
+    background-color: #FF92D3;
+    text-align: center;
+    margin-top: 10px;
+    left: 20px;
+    top: 190px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #CA2588;
+    border-radius: 15px;
+    box-shadow: 5px 5px 4px #F9B6DF;
+}
+
+.dad-delete {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    background-color: #FABDE2;
+    height: 40px;
+    width: 280px;
+    border: none;
+    border-radius: 0px 0px 15px 15px;
+}
+
+/* .btn-delete {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    background: #FABDE2;
+    border: 0.5px;
+    border-color: #CA2588;
+    font-family: 'Marvel';
+    font-style: normal;
+    font-size: 22px;
+    color: #CA2588;
+    bottom: 0;
+
+} */
+
+.material-icons {
+    color: #CA2588;
+}
+
+.material-icons:hover {
+    color: #FF92D3;
+}
+
+.card-title {
+    background-color: #FF92D3;
+    height: 60px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.nc-description {
+
+    height: 180px;
+    background-color: #FABDE2;
+    margin: 0%;
+    border: none;
+}

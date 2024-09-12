@@ -1,36 +1,17 @@
-import ReactDOM from "react-dom/client";
-import './index.css';
-import JournalNoteApp from "./JournalNoteApp";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import  { App }  from './App';
+import './styles.css';
+import './firebase';
+import { appFirebase } from './firebase';
 
-const root = ReactDOM.createRoot (document.getElementById("root"));
-// root.render(<h1>♥ Journal Note ♥</h1>);
-root.render(
-<JournalNoteApp></JournalNoteApp>
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <BrowserRouter>
+        <App/>
+        </BrowserRouter>
+    </React.StrictMode>
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const JournalNoteApp = (
-//     <div>
-//     <h1>Journal Note</h1>
-//     <LoginBox 
-//     title = "Login"
-//     username = ""
-//     password= ""
-//     login = "Login"
-//     ></LoginBox>
-//     </div>);
-    
