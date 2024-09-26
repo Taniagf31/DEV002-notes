@@ -1,0 +1,279 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+
+body {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    color: #CA2588;
+    height: auto;
+    width: 100%;
+}
+
+::placeholder {
+    color: #CA2588;
+}
+
+.dad-logout {
+    width: 768px;
+    align-items: center;
+    background-color: #FF92D3;
+    display: flex;
+    justify-content: right;
+    height: 50px;
+}
+
+.btn-logout {
+
+    border-radius: 50px;
+    background: #FABDE2;
+    box-shadow: 4px 2px 2px #F692CF;
+    border: 0;
+    width: 100px;
+    height: 35px;
+    font-family: 'Marvel';
+    font-style: normal;
+    font-size: 20px;
+    color: #CA2588;
+    margin-right: 10px;
+}
+
+.title-page {
+    width: 100%;
+    font-size: 44px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.subtitle-page {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-size: 32px;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.container-title {
+
+    width: 280px;
+    height: 30px;
+    font-family: 'Marvel';
+    border-radius: 20px 20px 0px 0px;
+    background: #BFA2DB;
+    font-size: x-large;
+    border: none;
+    color: #CA2588;
+    padding: 10px;
+}
+
+h3 {
+    font-family: 'Marvel';
+    font-style: normal;
+    font-size: 28px;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.box {
+
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Marvel';
+}
+
+
+
+.text-description {
+    width: 280px;
+    height: 225px;
+    padding: 10px;
+    font-family: 'Marvel';
+    font-size: x-large;
+    border-radius: 0px 0px 20px 20px;
+    border: none;
+    background: #D9ACF5;
+    color: #CA2588;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+}
+
+.container-description {
+    width: 260px;
+    height: 175px;
+    font-family: 'Marvel';
+    border-radius: 0px 0px 20px 20px;
+    border: none;
+    background: #FABDE2;
+    font-size: x-large;
+    color: #CA2588;
+    padding: 10px;
+    padding-bottom: 0;
+    justify-content: center;
+}
+
+.dad-save {
+    width: 280px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-save {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background:  #D9ACF5;
+    border: none;
+    border-color: #CA2588;
+    font-family: 'Marvel';
+    /* font-style: ; */
+    font-size: 24px;
+    color: #CA2588;
+    bottom: 0;
+}
+.container-body{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    /* background-color: purple; */
+}
+.container-card{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap: wrap;
+    /* background-color: turquoise; */
+
+}
+
+.card{
+    margin: 6px;
+   /* background-color: yellowgreen; */
+   width: fit-content;
+}
+
+.container-note {
+
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    width: 280px;
+    height: 280px;
+    background-color: #FF92D3;
+    text-align: center;
+    margin-top: 10px;
+    left: 20px;
+    top: 190px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 32px;
+    color: #CA2588;
+    border-radius: 15px;
+   
+}
+
+.dad-delete {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    width: 280px;
+    border: none;
+    border-radius:  0px 0px 20px 20px;
+}
+
+.dad-btns{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 280px;
+    height: 40px;
+    border: none;
+    border-radius:  0px 0px 20px 20px;
+    background-color:#FABDE2;
+}
+
+.btn-delete{
+    width: auto;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.btn-edit{
+    width: auto;
+    background-color: transparent;
+    margin-right: 10px;
+}
+
+.material-icons {
+    color: darkviolet;
+}
+
+.material-icons:hover {
+    color: darkviolet;
+}
+
+.card-title {
+    background: #FF92D3;
+    color: darkviolet;
+    height: 60px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.nc-description {
+
+    height: 180px;
+    width: 280px;
+    font-size: x-large;
+    background: #FABDE2;
+    color: darkviolet;
+    margin: 0;
+    border: none;
+}
+
+/* Mediaqueries */
+
+
+
+/* ------------------------------------------------------------------------------------------------------------ */
+/* .container-notes {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+} */
+
+/* .container-all {
+
+
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 12px;
+} */
